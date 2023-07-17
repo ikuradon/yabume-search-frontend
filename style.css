@@ -54,3 +54,7 @@ main h4 {
     margin-bottom: 4px;
     line-height: 1.5;
 }
+
+.ais-Hits-item {
+    overflow-wrap: anywhere;
+}

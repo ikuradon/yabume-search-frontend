@@ -25,6 +25,7 @@ search.addWidgets([
             <h2>
               ${components.Highlight({ attribute: 'content', hit })}
             </h2>
+            <p>${components.Highlight({ hit, attribute: "pubkey" })}</p>
             <a href="https://yabu.me/${hit.kind === 1 ? window.NostrTools.nip19.noteEncode(hit.id) : window.NostrTools.nip19.npubEncode(hit.id)}">Source</a>
           </div>
         </div>
@@ -34,6 +35,11 @@ search.addWidgets([
         return html`No results for <q>${results.query}</q>`;
       },
     },
+  }),
+  instantsearch.widgets.pagination({
+    container: "#pagination",
+    showFirst: false,
+    showLast: false,
   }),
 ]);
 

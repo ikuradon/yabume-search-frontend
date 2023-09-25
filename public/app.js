@@ -46,4 +46,8 @@ search.addWidgets([
   }),
 ]);
 
+setInterval(() => {
+  search.refresh();
+}, 5000);
+
 search.start();

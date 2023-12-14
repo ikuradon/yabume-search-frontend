@@ -1,9 +1,14 @@
+const { searchClient } = instantMeiliSearch(
+  "https://search.yabu.me",
+  "99ebaa5184aecda61bd9fa569039cc8c1fc31b1dc88289f2355e857731bac1ef",
+  {
+    hitsPerPage: 20,
+  }
+);
+
 const search = instantsearch({
   indexName: "events",
-  searchClient: instantMeiliSearch(
-    "https://search.yabu.me",
-    "99ebaa5184aecda61bd9fa569039cc8c1fc31b1dc88289f2355e857731bac1ef"
-  ),
+  searchClient: searchClient,
 });
 
 search.addWidgets([
